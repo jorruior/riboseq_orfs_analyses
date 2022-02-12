@@ -73,12 +73,12 @@ for n,line in enumerate(fline):
 	if n != 0:
 		sub = sub + line.count("(")
 
-outp = open(tag + ".prot.ancestors","w+")
-outp.write("orf_id\tsp\tev_age\tsyn_age\tbranch\tTIS\tmaxORF\tconv\tseq\n")
+outp = open(tag + ".prot.ancestors","a+")
+#outp.write("orf_id\tsp\tev_age\tsyn_age\tbranch\tTIS\tmaxORF\tconv\tseq\n")
 
 outh = open(tag + ".ancestors","a+")
 
-outn = open(tag + ".nucl.ancestors","w+")
+outn = open(tag + ".nucl.ancestors","a+")
 max_st_cons = "age0_human_s0"
 max_sy_cons = "age0_human_s0"
 ev = {}
