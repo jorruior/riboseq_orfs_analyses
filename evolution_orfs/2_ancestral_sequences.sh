@@ -6,5 +6,9 @@
 for f in $1/orfs/*.maf; do echo $(basename $f); prank -d=$f -showanc -showevents -prunetree -F -once -t=$2 -o=tmp/$(basename $f); done
 
 rm $3.ancestors
+rm $3.prot.ancestors
+rm $3.nucl.ancestors
+
 echo -e 'orf_id\tsp\tev_age\tsyn_age\tgained\tgained_convergent\tlost\tdenovo\tseq' > $3.ancestors
+echo -e 'orf_id\tsp\tev_age\tsyn_age\tbranch\tTIS\tmaxORF\tconv\tseq' > $3.prot.ancestors
 for f in tmp/*best.anc.dnd; do python3 parsing_ancestors.py $f $3; done
