@@ -9,7 +9,6 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio import pairwise2
 from Bio.pairwise2 import format_alignment
-import networkx as nx 
 from optparse import OptionParser
 
 __author__ = "Jorge Ruiz-Orera"
