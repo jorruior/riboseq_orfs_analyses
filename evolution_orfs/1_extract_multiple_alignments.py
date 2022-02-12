@@ -47,6 +47,7 @@ def check_file (file_str):
 
 def parse_bed(bed):
 	#Read a bed and create a dict with sorted transcript coordinates, chrm, strand, and gene
+	trans = {}
 	for line in open(bed):
 		t_name = line.split('\t')[3]
 		chrm = line.split("\t")[0]
