@@ -99,15 +99,17 @@ for last_sp in ancestor:
 			tis[last_sp] = "0"
 
 	#Longest ORF in the stretch
-	op = 0
+	op = -1
 	max_op[last_sp] = 0
 	if len(str(fa[ancestor[last_sp][0]]).replace("-","").replace("X","*")) >= 4:
 		for n2 in str(fa[ancestor[last_sp][0]]).replace("-","").replace("X","*"):
+			if (n2 == "M") and (op == -1):
+				op = 0
 			if n2 == "*":
 				if op > max_op[last_sp]:
 					max_op[last_sp] = op
-				op = 0
-			else:
+				op = -1
+			elif op != -1:
 				op += 1
 		if op > max_op[last_sp]:
 			max_op[last_sp] = op	
@@ -149,14 +151,16 @@ for last_sp in ancestor:
 				tis2 = "0"
 
 		#Longest ORF in the stretch
-		op = 0
+		op = -1
 		max_op2 = 0
 		for n2 in str(fa[sp2]).replace("-","").replace("X","*"):
-			if n2 == "*":
-				if op > max_op2:
-					max_op2 = op
+			if (n2 == "M") and (op == -1):
 				op = 0
-			else:
+			if n2 == "*":
+				if op > max_op[last_sp]:
+					max_op[last_sp] = op
+				op = -1
+			elif op != -1:
 				op += 1
 		if op > max_op2:
 			max_op2 = op	
