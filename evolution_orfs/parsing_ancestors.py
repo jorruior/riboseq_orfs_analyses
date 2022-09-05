@@ -104,7 +104,7 @@ for last_sp in ancestor:
 	if len(str(fa[ancestor[last_sp][0]]).replace("-","").replace("X","*")) >= 4:
 		for n2 in str(fa[ancestor[last_sp][0]]).replace("-","").replace("X","*"):
 			if (n2 == "M") and (op == -1):
-				op = 0
+				op = 1
 			if n2 == "*":
 				if op > max_op[last_sp]:
 					max_op[last_sp] = op
@@ -114,7 +114,7 @@ for last_sp in ancestor:
 		if op > max_op[last_sp]:
 			max_op[last_sp] = op	
 		try:
-			max_op[last_sp] = float(max_op[last_sp])/len(str(fa["hg38"]).replace("-","").replace("X",""))*100
+			max_op[last_sp] = float(max_op[last_sp])/len(str(fa["hg38"]).replace("-","").replace("X","").replace("*",""))*100
 		except:
 			pass
 
@@ -155,7 +155,7 @@ for last_sp in ancestor:
 		max_op2 = 0
 		for n2 in str(fa[sp2]).replace("-","").replace("X","*"):
 			if (n2 == "M") and (op == -1):
-				op = 0
+				op = 1
 			if n2 == "*":
 				if op > max_op[last_sp]:
 					max_op[last_sp] = op
@@ -165,7 +165,7 @@ for last_sp in ancestor:
 		if op > max_op2:
 			max_op2 = op	
 		try:
-			max_op2 = float(max_op2)/len(str(fa["hg38"]).replace("-","").replace("X",""))*100
+			max_op2 = float(max_op2)/len(str(fa["hg38"]).replace("-","").replace("X","").replace("*",""))*100
 		except:
 			pass
 
