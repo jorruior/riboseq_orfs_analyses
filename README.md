@@ -1,4 +1,4 @@
-# riboseq_orfs_analyses
+# evolution_orfs_analyses
 This repository contains a series of scripts developed to obtain the main results of the manuscript X.
 
 **-evolution_orfs:** Scripts to build multiple alignments of ORF sequences, reconstruct ancestral sequences, and evaluate the sequence conservation of ORFs across the included species. 
