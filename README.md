@@ -1,4 +1,4 @@
-# evolution_orfs_analyses
+# Analyzing the evolution of ORF sequences and structures across primate and mammalian species
 This repository contains a series of scripts developed to obtain the main results of the manuscript X.
 
 **-evolution_orfs:** Scripts to build multiple alignments of ORF sequences, reconstruct ancestral sequences, and evaluate the sequence conservation of ORFs across the included species. 
